@@ -6,11 +6,11 @@ const Web3 = require('Web3');
 
 const web3 = new Web3(ganache.provider());
 
-beforeEach(() => {
+let accounts;
+
+beforeEach(async () => {
 	// get a list of ganache accounts
-	web3.eth.getAccounts().then(fetchedAccounts => {
-		console.log(fetchedAccounts);
-	});
+	accounts = await web3.eth.getAccounts();
 
 	// use one of the accounts to deploy contract
 
@@ -18,10 +18,9 @@ beforeEach(() => {
 
 describe('Inbox', () => {
 	it('deploy a contract', () => {
-
+		console.log(accounts);
 	});
 });
-
 
 
 // class Car{
