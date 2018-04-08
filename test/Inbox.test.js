@@ -34,7 +34,13 @@ describe('Inbox', () => {
 	it('has a default message', async () => {
 		const message = await inbox.methods.message().call();
 		assert.equal(message, 'hi there!')
-	})
+	});
+
+	it('change the message', async () => {
+		await inbox.methods.setMessage('updated message.').send({from: accounts[0]});
+		const message = await inbox.methods.message().call();
+		assert.equal(message, 'updated message.');
+	});
 });
 
 
