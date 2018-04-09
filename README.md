@@ -1,6 +1,8 @@
 # ethereum-boilerplate
 
-requirement:
+requirements:
+
+Metamask (chorme extension)
 
 node
 
@@ -13,7 +15,7 @@ $ npm install --save solc
 ```
 mocha (for test)
 
-ganache-cli (personal chain)
+ganache-cli (ethereum RPC client for testing)
 
 web3
 
@@ -33,6 +35,6 @@ $ node compile.js
 // test:
 $ npm run test
 
-// deploy:
-node deploy.js
+// deploy, and don't forget to use your mneomonic of Metamask in deploy.js:
+$ node deploy.js
 ```
